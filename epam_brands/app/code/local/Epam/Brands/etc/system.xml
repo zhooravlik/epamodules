@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <tabs>
+        <epamodules translate="label">
+            <label>Epam Modules</label>
+            <sort_order>200</sort_order>
+        </epamodules>
+    </tabs>
+    <sections>
+        <ebrands translate="label" module="ebrands">
+            <label>Brands</label>
+            <class>separator-top</class>
+            <tab>epamodules</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="ebrands">
+                    <label>General</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <is_enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_enabled>
+                        <attr_name translate="label">
+                            <label>Brands Attribute Code</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attr_name>
+                    </fields>
+                </general>
+                <meta_info translate="label" module="ebrands">
+                    <label>Default Meta Info</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <meta_title translate="label">
+                            <label>Default Meta Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </meta_title>
+                        <meta_description translate="label">
+                            <label>Default Meta Description</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </meta_description>
+                        <meta_keywords translate="label">
+                            <label>Default Meta Keywords</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </meta_keywords>
+                    </fields>
+                </meta_info>
+            </groups>
+        </ebrands>
+    </sections>
+</config>

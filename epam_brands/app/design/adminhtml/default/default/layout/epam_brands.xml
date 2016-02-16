@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout>
+    <adminhtml_brand_list_index>
+        <reference name="content">
+            <block type="ebrands/adminhtml_brand" name="brands_grid"/>
+        </reference>
+    </adminhtml_brand_list_index>
+    <adminhtml_brand_list_edit>
+        <update handle="editor"/>
+        <reference name="left">
+            <block type="ebrands/adminhtml_brand_edit_tabs" name="brand_edit_tabs">
+                <block type="ebrands/adminhtml_brand_edit_tab_form" name="brand_edit_tab_form"/>
+                <block type="ebrands/adminhtml_brand_edit_tab_meta" name="brand_edit_tab_meta"/>
+                <action method="addTab"><name>information_section</name><block>brand_edit_tab_form</block></action>
+                <action method="addTab"><name>meta_section</name><block>brand_edit_tab_meta</block></action>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="ebrands/adminhtml_brand_edit" name="brand_edit_information"/>
+        </reference>
+    </adminhtml_brand_list_edit>
+    <adminhtml_brand_list_grid>
+        <remove name="root"/>
+        <block type="ebrands/adminhtml_brand_grid" name="brand_grid" output="toHtml"/>
+    </adminhtml_brand_list_grid>
+</layout>

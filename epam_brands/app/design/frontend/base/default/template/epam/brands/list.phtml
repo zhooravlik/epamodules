@@ -1,0 +1,30 @@
+<?php $_brandsCollection = $this->getBrandsCollection(); ?>
+<?php $_colCnt = 3; ?>
+<div>
+    <div class="page-title">
+        <h1><?php echo $this->__('Brands'); ?></h1>
+    </div>
+    <?php $i = 0; ?>
+    <?php foreach($_brandsCollection as $_brand):?>
+        <?php if($i++ % $_colCnt == 0){ ?>
+        <ul class="products-grid first odd">
+        <?php } ?>
+            <li class="item<?php if($i++ % $_colCnt == 0){
+                echo ' last';
+            } elseif( ($i - 1) % $_colCnt == 0){
+                echo ' first';
+            }  ?>">
+                <a href="<?php echo $this->getUrl('brands' . '/' . $_brand->getIdentifier()) ?>" title="<?php $_brand->getBrand(); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'brand' . '/' . $_brand->getBrandLogo() ?>" alt="<?php echo $_brand->getBrandLogo() ?>" width="80" height="80" />
+                </a>
+                <h2>
+                    <a href="<?php echo $this->getUrl('brands' . '/' . $_brand->getIdentifier()) ?>" title="<?php echo $_brand->getBrand() ?>">
+                        <?php echo $_brand->getBrand(); ?>
+                    </a>
+                </h2>
+            </li>
+        <?php if($i % $_colCnt == 0 || $i == sizeof($_brandsCollection)){ ?>
+        </ul>
+        <?php } ?>
+    <?php endforeach; ?>
+</div>

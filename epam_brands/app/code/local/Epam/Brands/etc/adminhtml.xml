@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <epamodules translate="title">
+                        <title>Epam Modules</title>
+                        <sort_order>200</sort_order>
+                        <children>
+                            <ebrands translate="title" module=
+                            "ebrands">
+                                <title>Brands</title>
+                                <sort_order>100</sort_order>
+                                <children>
+                                    <brand_list translate="title" module=
+                                    "ebrands">
+                                        <title>Manage Brands</title>
+                                        <sort_order>10</sort_order>
+                                    </brand_list>
+                                    <brand_config translate="title" module=
+                                    "ebrands">
+                                        <title>Brands Configuration</title>
+                                        <sort_order>20</sort_order>
+                                    </brand_config>
+                                </children>
+                            </ebrands>
+                        </children>
+                    </epamodules>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <epamodules translate="title">
+                                        <title>Epam Modules</title>
+                                    </epamodules>
+                                    <ebrands>
+                                        <title>Brands Configuration</title>
+                                    </ebrands>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <epamodules translate="title">
+            <title>Epam Modules</title>
+            <sort_order>90</sort_order>
+            <children>
+                <ebrands translate="title" module="ebrands">
+                    <title>Brands</title>
+                    <sort_order>100</sort_order>
+                    <children>
+                        <brand_list translate="title" module="ebrands">
+                            <title>Manage Brands</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/brand_list</action>
+                            <depends>
+                                <module>Epam_Brands</module>
+                                <config>ebrands/general/is_enabled</config>
+                            </depends>
+                        </brand_list>
+                        <brand_config translate="title" module="ebrands">
+                            <title>Brands Configuration</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/system_config/edit/section/ebrands</action>
+                        </brand_config>
+                    </children>
+                </ebrands>
+            </children>
+        </epamodules>
+    </menu>
+</config>

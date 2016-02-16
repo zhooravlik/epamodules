@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <Epam_Brands>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Epam_Brands>
+    </modules>
+</config>

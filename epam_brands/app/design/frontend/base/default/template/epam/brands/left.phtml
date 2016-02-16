@@ -1,0 +1,20 @@
+<?php $_brandsCollection = $this->getBrandsCollection(); ?>
+<div class="block block-layered-nav">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Shop By Brand') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <dl id="narrow-by-list">
+            <dd class="odd">
+                <ol>
+                    <?php foreach ($_brandsCollection as $_brand): ?>
+                    <li>
+                        <a href="<?php echo $this->getUrl('brands' . '/' . $_brand->getIdentifier()) ?>"><?php echo $this->__($_brand->getBrand()) ?></a>
+                        <h2><?php echo Mage::getModel('ebrands/brand')->getBrandName($_brand->getBrand(), Mage::app()->getStore()->getId())  ?></h2>
+                    </li>
+                    <?php endforeach; ?>
+                </ol>
+            </dd>
+        </dl>
+    </div>
+</div>

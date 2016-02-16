@@ -1,0 +1,26 @@
+<?php $_brandsCollection = $this->getBrandsCollection(); ?>
+<div class="block" id="brands-homepage">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Shop By Brands'); ?></span></strong>
+    </div>
+    <div class="block-content">
+        <form id="pollForm" action="<?php echo $this->getUrl('brands') ?>" method="post">
+            <?php $n = 0; ?>
+            <ul class="products-grid first">
+                <?php foreach($_brandsCollection as $_brand):?>
+                    <li class="item<?php $n++; if($n == sizeof($_brandsCollection)){ echo ' last'; } ?>">
+                        <a class="product-images" href="<?php echo $this->getUrl('brands' . '/' . $_brand->getIdentifier()) ?>" title="<?php echo $_brand->getBrand() ?>">
+                            <img alt="<?php echo $_brand->getBrandLogo() ?>" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'brand' . '/' . $_brand->getBrandLogo() ?>" />
+                        </a>
+                        <h2><?php echo Mage::getModel('ebrands/brand')->getBrandName($_brand->getBrand(), Mage::app()->getStore()->getId())  ?></h2>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <div class="actions" style="clear: left;">
+                <button type="submit" title="<?php echo $this->__('All Brands') ?>" class="button">
+                    <span><?php echo $this->__('All Brands') ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
