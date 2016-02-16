@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_category_view>
+        <reference name="head">
+            <block type="core/text" name="layered.slider.jquery">
+                <action method="setText" ifconfig="layered/price_slider/price_type">
+                    <text>
+                        <![CDATA[<script type="text/javascript">
+                        if (typeof(jQuery) == 'undefined') {
+                            var s = document.createElement('SCRIPT');
+                            s.src = '/js/epam/layered/jquery-1.11.2.min.js';
+                            s.type = 'text/javascript';
+                            document.getElementsByTagName('HEAD')[0].appendChild(s);
+                        }
+                        jQuery.noConflict();
+                        </script>]]>
+                    </text>
+                </action>
+            </block>
+            <block type="core/text" name="layered.slider.jquery.ui">
+                <action method="setText" ifconfig="layered/price_slider/price_type">
+                    <text>
+                        <![CDATA[<script type="text/javascript" src="/js/epam/layered/jquery-ui.min.js"></script>]]>
+                    </text>
+                </action>
+            </block>
+            <block type="core/text" name="layered.slider.js">
+                <action method="setText" ifconfig="layered/price_slider/price_type">
+                    <text>
+                        <![CDATA[<script type="text/javascript" src="/js/epam/layered/layered.js"></script>]]>
+                    </text>
+                </action>
+            </block>
+
+            <action method="addCss" ifconfig="layered/price_slider/price_type">
+                <script>css/epam/layered/jquery-ui.min.css</script>
+            </action>
+            <action method="addCss" ifconfig="layered/price_slider/price_type">
+                <script>css/epam/layered/layered.css</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="layered/ajax" name="ajaxSlider" template="epam/layered/ajax.phtml" />
+        </reference>
+    </catalog_category_view>
+    <enterprise_search_result_index>
+        <reference name="head">
+            <block type="core/text" name="layered.slider.jquery">
+                <action method="setText" ifconfig="layered/price_slider/price_type">
+                    <text>
+                        <![CDATA[<script type="text/javascript">
+                        if (typeof(jQuery) == 'undefined') {
+                            var s = document.createElement('SCRIPT');
+                            s.src = '/js/epam/layered/jquery-1.11.2.min.js';
+                            s.type = 'text/javascript';
+                            document.getElementsByTagName('HEAD')[0].appendChild(s);
+                        }
+                        jQuery.noConflict();
+                        </script>]]>
+                    </text>
+                </action>
+            </block>
+            <block type="core/text" name="layered.slider.jquery.ui">
+                <action method="setText" ifconfig="layered/price_slider/price_type">
+                    <text>
+                        <![CDATA[<script type="text/javascript" src="/js/epam/layered/jquery-ui.min.js"></script>]]>
+                    </text>
+                </action>
+            </block>
+            <block type="core/text" name="layered.slider.js">
+                <action method="setText" ifconfig="layered/price_slider/price_type">
+                    <text>
+                        <![CDATA[<script type="text/javascript" src="/js/epam/layered/layered.js"></script>]]>
+                    </text>
+                </action>
+            </block>
+
+            <action method="addCss" ifconfig="layered/price_slider/price_type">
+                <script>css/epam/layered/jquery-ui.min.css</script>
+            </action>
+            <action method="addCss" ifconfig="layered/price_slider/price_type">
+                <script>css/epam/layered/layered.css</script>
+            </action>
+        </reference>
+        <reference name="footer">
+            <block type="layered/ajax" name="ajaxSlider" template="epam/layered/ajax.phtml" />
+        </reference>
+    </enterprise_search_result_index>
+</layout>

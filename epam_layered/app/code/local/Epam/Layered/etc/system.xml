@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <epamodules translate="label">
+            <label>Epam Modules</label>
+            <sort_order>200</sort_order>
+        </epamodules>
+    </tabs>
+    <sections>
+        <layered translate="label" module="layered">
+            <label>Layered</label>
+            <class>separator-top</class>
+            <tab>epamodules</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="layered">
+                    <label>General</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <max_unfolded_options translate="label comment">
+                            <label>Max Unfolded Options Count</label>
+                            <frontend_type>text</frontend_type>
+                            <required>1</required>
+                            <comment><![CDATA[Can not be empty. Only digits are allowed]]></comment>
+                            <validate>required-entry validate-digits</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_unfolded_options>
+                    </fields>
+                </general>
+                <price_slider translate="label" module="layered">
+                    <label>Price Filter Configuration</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <price_type translate="label">
+                            <label>Show Price As</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>layered/source_price</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price_type>
+                        <show_fromto translate="label">
+                            <depends><price_type>1</price_type></depends>
+                            <label>Show From-To Widget</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_fromto>
+                        <use_ajax translate="label">
+                            <depends><price_type>1</price_type></depends>
+                            <label>Use AJAX</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_ajax>
+                        <ajax_timeout translate="label comment">
+                            <depends><price_type>1</price_type></depends>
+                            <label>AJAX Timeout</label>
+                            <frontend_type>text</frontend_type>
+                            <required>1</required>
+                            <comment><![CDATA[After that time AJAX request would be sent.<br/> Can not be empty. Only digits are allowed]]></comment>
+                            <validate>required-entry validate-digits</validate>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ajax_timeout>
+                        <after_ajax translate="label comment">
+                            <depends><price_type>1</price_type></depends>
+                            <label>JS Callback After Ajax</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <class>adminhtml-textarea-after-ajax</class>
+                            <comment><![CDATA[Javascript Callback after AJAX call.]]></comment>
+                            <tooltip>This JS will be called after the ajax request is completed.</tooltip>
+                        </after_ajax>
+                    </fields>
+                </price_slider>
+            </groups>
+        </layered>
+    </sections>
+</config>

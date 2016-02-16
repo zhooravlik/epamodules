@@ -1,0 +1,58 @@
+dl#narrow-by-list select {
+	width: 98%;
+}
+
+#narrow-by-list div.text-box {
+    text-align: center;
+}
+
+.priceTextBox,
+ input#minPrice, input#maxPrice {
+    /*width: 77px; */
+    width: 22%;
+    padding: 0 2%;
+    /* margin: 5px 10px 15px 0; */
+    margin: 25px 5% 0 0;
+    font-size: 80%;
+}
+
+/*.goBtn {
+	width: 65px;
+	padding: 2px;
+	margin: 5px 10px 15px 0;
+}*/
+#narrow-by-list input.goBtn.button {
+	/*margin-top: -2px;*/
+	color: #FFFFFF !important;
+	text-transform: uppercase !important;
+	/*background: #05aecc;*/
+	font: 14px Cabin;
+
+    width: 22%;
+    font-size: 80%;
+    padding: 8px 0;
+}
+
+.goBtn:hover {
+	background: #F0C417 !important;
+}
+
+.priceCurrency {
+    margin-left: -5px;
+}
+
+.adminhtml-textarea-after-ajax {
+	height: 100px;
+	max-height: 200px;
+}
+
+.layered-amount-label {
+	text-align: center;
+	margin: 5px 0 0;
+	color: #3498DC !important;
+	/*-webkit-text-stroke: 1px #0596B5;*/
+}
+
+div.even div.price {
+	margin-top: 10px;
+}

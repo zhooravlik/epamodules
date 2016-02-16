@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <epamodules translate="title">
+                        <title>Epam Modules</title>
+                        <sort_order>200</sort_order>
+                        <children>
+                            <layered translate="title" module="layered">
+                                <title>Layered</title>
+                                <sort_order>200</sort_order>
+                                <children>
+                                    <layered_config translate="title" module="layered">
+                                        <title>Layered Configuration</title>
+                                        <sort_order>10</sort_order>
+                                    </layered_config>
+                                </children>
+                            </layered>
+                        </children>
+                    </epamodules>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <epamodules translate="title">
+                                        <title>Epam Modules</title>
+                                    </epamodules>
+                                    <layered>
+                                        <title>Layered Configuration</title>
+                                    </layered>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <epamodules translate="title">
+            <title>Epam Modules</title>
+            <sort_order>90</sort_order>
+            <children>
+                <layered translate="title" module="layered">
+                    <title>Layered</title>
+                    <sort_order>200</sort_order>
+                    <children>
+                        <layered_config translate="title" module="layered">
+                            <title>Layered Configuration</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/system_config/edit/section/layered</action>
+                        </layered_config>
+                        <catasolr_config translate="title" module="layered">
+                            <title>Catalog Search Configuration</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/system_config/edit/section/catalog</action>
+                        </catasolr_config>
+                    </children>
+                </layered>
+            </children>
+        </epamodules>
+    </menu>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Epam_Layered>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Epam_Layered>
+    </modules>
+</config>

@@ -1,0 +1,22 @@
+<?php $hlp = Mage::helper('layered'); ?>
+<select onchange="if (this.value) setLocation(this.value)">
+    <option>...</option>
+    <?php foreach ($this->getItems() as $_item): ?>
+            <?php if ($_item->getCount() > 0): ?>
+                <option value="<?php echo $this->urlEscape($_item->getUrl()) ?>">
+                    <?php echo $hlp->optionNameShorter($_item->getLabel(), 'dropdown') ?>
+                    <?php if ($this->shouldDisplayProductCount()): ?>
+                        <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                    <?php endif; ?>
+                </option>
+            <?php else: ?>
+                <span>
+                <?php echo $hlp->optionNameShorter($_item->getLabel(), 'dropdown'); ?>
+                    <?php if ($this->shouldDisplayProductCount()): ?>
+                        <span class="count">(<?php echo $_item->getCount() ?>)</span>
+                    <?php endif; ?>
+                </span>
+            <?php endif; ?>
+
+    <?php endforeach ?>
+</select>

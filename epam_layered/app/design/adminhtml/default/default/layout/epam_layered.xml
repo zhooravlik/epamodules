@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_catalog_product_attribute_edit>
+        <reference name="attribute_edit_tabs">
+            <block type="layered/adminhtml_options" name="attr_options" template="epam/layered/options.phtml">
+                <action method="setAfter">
+                    <block_name>labels</block_name>
+                </action>
+            </block>
+            <action method="addTab"><name>options</name><block>attr_options</block></action>
+        </reference>
+    </adminhtml_catalog_product_attribute_edit>
+</layout>

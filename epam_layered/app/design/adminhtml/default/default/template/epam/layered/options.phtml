@@ -1,0 +1,38 @@
+<?php $hlp          = Mage::helper('layered') ?>
+<?php $_options     = $this->getOptions() ?>
+<?php $attrModel    = Mage::getModel('layered/options') ?>
+<?php $curAttrId    = Mage::app()->getRequest()->getParam('attribute_id') ?>
+<?php if(! $attrModel->getAttrAppearance($curAttrId)){
+    if(Mage::app()->getRequest()->getParam('custom_appearance')){
+        $curOptionId  = Mage::app()->getRequest()->getParam('custom_appearance');
+    } else {
+        $curOptionId = 0;
+    }
+} else {
+    $curOptionId  = $attrModel->getAttrAppearance($curAttrId);
+} ?>
+<div class="entity-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $hlp->__('Select an appearance for the current attribute') ?></h4>
+    </div>
+    <div class="box">
+        <div class="hor-scroll">
+            <?php if (! $this->canShowOptions()): ?>
+                <h4><?php echo $hlp->__(
+                        'To set custom appearance for this attribute, please select `Use In Layered Navigation` -> `Yes` at the `Properties` -> `Frontend Properties` tab and save the attribute.'
+                    ) ?></h4>
+            <?php else: ?>
+                <?php if(sizeof($_options) > 0): ?>
+                    <select id="custom_appearance" name="custom_appearance" class="select">
+                        <option value="0" <?php if($curOptionId == 0){ echo 'selected="selected"';} ?>>Default</option>
+                        <?php foreach($_options as $key => $opt): ?>
+                            <option value="<?php echo $key; ?>" <?php if($curOptionId == $key){ echo 'selected="selected"';} ?>>
+                                <?php echo $_options[$key] ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                <?php endif; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
